@@ -4,6 +4,16 @@ Automação do desafio público [rpachallenge.com](https://rpachallenge.com/). O
 
 Esta solução foi escrita e executada por um agente de automação (Python, Playwright, openpyxl e reportlab). Não é autoria humana e não descreve experiência profissional pessoal. Ela não envia e-mail, não publica o resultado e não preenche o Microsoft Forms do recrutamento.
 
+## Resultado da execução
+
+- **Pontuação:** 100% — 70 de 70 campos corretos
+- **Registros:** 10 linhas OK, nenhuma NOK; 10 ordens visuais distintas
+- **Tempo medido pelo site:** 2.445 ms (duração total da automação: 2.766 ms)
+- **Executado em:** 6 de novembro de 2026, das 18:22:58 às 18:23:02 (`America/Sao_Paulo`), usando Chrome headless
+- **Formulário de recrutamento:** apenas consultado; nenhum dado foi preenchido ou enviado
+
+O relatório técnico completo está em [`output/execucao/relatorio-desafio-rpa.pdf`](output/execucao/relatorio-desafio-rpa.pdf). A pontuação acima foi lida do site ao final da execução.
+
 ## O que entra e o que sai
 
 A planilha oficial tem 10 linhas e 7 colunas. O cabeçalho da segunda coluna vem com espaço no fim (`Last Name `). O telefone está gravado como número. Nada disso é copiado para o código: `openpyxl` lê o arquivo indicado em `config.yaml`.
