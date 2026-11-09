@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mini RPA Challenge</title>
+</head>
+<body>
+  <button id="start" class="btn-large uiColorButton" type="button">Start</button>
+  <button id="round" class="btn-large uiColorButton" type="button" hidden>Round 1</button>
+  <div id="form">
+    <form>
+      <div id="fields"></div>
+      <input id="submit" class="btn uiColorButton" type="submit" value="Submit">
+    </form>
+  </div>
+  <script>
+    const ALL = [
+      ["First Name", "labelFirstName"],
+      ["Last Name", "labelLastName"],
+      ["Company Name", "labelCompanyName"],
+      ["Role in Company", "labelRole"],
+      ["Address", "labelAddress"],
+      ["Email", "labelEmail"],
+      ["Phone Number", "labelPhone"]
+    ];
+    const params = new URLSearchParams(location.search);
+    const rounds = Number(params.get("rounds") || "10");
+    const renameFrom = params.get("renameFrom") || "";
+    const renameTo = params.get("renameTo") || "";
+    const wipe = params.get("wipe") || "";
+    let idx = 1;
+    let started = false;
+    let score = 0;
+    let startTime = 0;
+
+    function shuffle(items) {
+      const copy = items.slice();
+      for (let i = copy.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function render() {
+      const source = ALL.map(([label, control]) => (
+        label === renameFrom ? [renameTo, control] : [label, control]
+      ));
+      const fields = shuffle(source);
+      document.getElementById("fields").innerHTML = fields.map(([label, control]) => {
+        const id = Math.random().toString(36).slice(2, 8);
+        return `<rpa1-field style="display:block;margin:8px"><div><label>${label}</label><input id="${id}" formcontrolname="${control}"></div></rpa1-field>`;
+      }).join("");
+    }
+
+    document.getElementById("start").addEventListener("click", () => {
+      started = true;
+      startTime = Date.now();
+      document.getElementById("start").hidden = true;
+      const round = document.getElementById("round");
+      round.hidden = false;
+      round.textContent = "Round " + idx;
+      render();
+    });
+
+    document.getElementById("submit").addEventListener("click", (event) => {
+      event.preventDefault();
+      if (!(started && idx >= 1 && idx <= rounds)) {
+        render();
+        return;
+      }
+      document.querySelectorAll("rpa1-field input").forEach((input) => {
+        if (input.value) score += 1;
+      });
+      idx += 1;
+      if (idx === rounds + 1) {
+        const elapsed = Date.now() - startTime;
+        const total = rounds * 7;
+        const percent = (score / total) * 100;
+        document.getElementById("form").hidden = true;
+        document.getElementById("round").textContent = "Round " + idx;
+        const box = document.createElement("div");
+        box.className = "congratulations";
+        box.innerHTML = `<div class="message1">Congratulations!</div><div class="message2">Your success rate is ${percent}% ( ${score} out of ${total} fields) in ${elapsed} milliseconds</div>`;
+        document.body.appendChild(box);
+        return;
+      }
+      document.getElementById("round").textContent = "Round " + idx;
+      render();
+    });
+
+    document.addEventListener("input", (event) => {
+      const control = event.target && event.target.getAttribute
+        ? event.target.getAttribute("formcontrolname")
+        : "";
+      if (wipe && control === wipe) {
+        event.target.value = "";
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>

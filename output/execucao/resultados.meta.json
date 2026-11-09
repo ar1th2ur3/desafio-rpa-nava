@@ -1,0 +1,4 @@
+{
+  "csv": "output/execucao/resultados.csv",
+  "json": "output/execucao/resultados.json"
+}

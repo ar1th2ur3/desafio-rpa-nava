@@ -1,0 +1,15 @@
+# Configuração local do desafio público. Não há credenciais.
+challenge_url: "https://rpachallenge.com/"
+excel_path: "data/challenge.xlsx"
+output_dir: "output/execucao"
+timezone: "America/Sao_Paulo"
+headless: true
+browser_channel: "chrome"
+viewport_width: 1440
+viewport_height: 1100
+navigation_timeout_ms: 45000
+action_timeout_ms: 15000
+screenshot_every_round: true
+inspect_forms: true
+# Consulta somente leitura. O programa não preenche nem envia este formulário.
+forms_url: "https://forms.cloud.microsoft.com/pages/responsepage.aspx?id=xrHFPHa8ekeBm7YJAl1cI-zUtyox44dIhrWC2I-uU6dUNkxETUgyRE80UEU1WlMzNjNVM0ExNDg2Sy4u&route=shorturl"

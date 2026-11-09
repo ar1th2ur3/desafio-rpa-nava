@@ -1,0 +1,119 @@
+{
+  "versao": "1.0.0",
+  "ferramentas": [
+    "Python 3.12.3",
+    "Playwright",
+    "openpyxl",
+    "reportlab",
+    "chrome"
+  ],
+  "autoria": "Agente de automação. Sem autoria humana e sem relato de experiência pessoal.",
+  "dados_fixos_no_codigo": false,
+  "fuso": "America/Sao_Paulo",
+  "challenge_url": "https://rpachallenge.com/",
+  "excel": {
+    "caminho": "/workspace/data/challenge.xlsx",
+    "sha256": "cf1a8c04a298cc12cb481a0a6c88b078b209dc59c4983f6ca78714d611c04d37",
+    "planilha": "Sheet1",
+    "cabecalhos_brutos": [
+      "First Name",
+      "Last Name ",
+      "Company Name",
+      "Role in Company",
+      "Address",
+      "Email",
+      "Phone Number"
+    ]
+  },
+  "linhas_excel": 10,
+  "cabecalho_last_name_com_espaco": true,
+  "limitacoes": [
+    "O site compara os dez envios com a própria lista interna do idioma inglês. A automação digita o que está na planilha; ela não corrige célula para forçar a nota.",
+    "A pontuação do site só aparece depois de dez envios. Uma planilha com outra quantidade é registrada, mas não produz o mesmo encerramento.",
+    "O tempo exibido pelo site inclui capturas de tela feitas antes de cada envio. A porcentagem mede acerto dos campos, não velocidade.",
+    "A consulta ao Microsoft Forms é só leitura. Se a página pedir login, o conteúdo das perguntas fica inacessível e nada é preenchido.",
+    "A execução depende do site público e de um Chrome local. Uma falha de rede ou uma mudança do HTML aparece como NOK ou como bloqueio, sem nota inventada."
+  ],
+  "forms": {
+    "consultado": true,
+    "url": "https://forms.cloud.microsoft.com/pages/responsepage.aspx?id=xrHFPHa8ekeBm7YJAl1cI-zUtyox44dIhrWC2I-uU6dUNkxETUgyRE80UEU1WlMzNjNVM0ExNDg2Sy4u&route=shorturl",
+    "acessivel": true,
+    "preenchido": false,
+    "enviado": false,
+    "login_exigido": false,
+    "titulo": "Processo Seletivo - Nava",
+    "url_final": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=xrHFPHa8ekeBm7YJAl1cI-zUtyox44dIhrWC2I-uU6dUNkxETUgyRE80UEU1WlMzNjNVM0ExNDg2Sy4u&route=shorturl",
+    "trecho": "Processo Seletivo - Nava Parabéns por completar mais uma etapa do nosso processo seletivo! Nesse momento, precisaremos que nos envie alguns dados para que possamos continuar a avaliação do seu perfil. Caso você esteja participando de um processo seletivo para atuação em um de nossos clientes, algumas das informações fornecidas poderão ser compartilhadas com o respectivo cliente exclusivamente para fins de avaliação da sua candidatura, observadas as disposições da Lei Geral de Proteção de Dados Pessoais (LGPD). Caso possua qualquer dúvida sobre como cuidamos dos seus dados pessoais durante nosso processo, é muito fácil. Basta encaminhar um e-mail ao dpo@nava.com.br. Quando você enviar este formulário, ele não coletará automaticamente seus detalhes, como nome e endereço de email, a menos que você mesmo o forneça. Obrigatória 1. Nome Completo 2. Nome Social 3. Você se enquadra como Pessoa com Deficiência (PCD), conforme a legislação vigente? Em caso afirmativo, se você se sentir confortável, informe o tipo de deficiência e se necessita de algum recurso de acessibilidade ou adaptação durante o processo seletivo. 4. Data de Nascimento  5. CPF 6. RG 7. Cidade do RG 8. Nome completo da m",
+    "motivo": "Conteúdo visível lido sem preencher campos.",
+    "screenshot": "screenshots/forms-somente-leitura.png",
+    "resumo": "A página abriu sem pedido de login, com o título Processo Seletivo - Nava. O questionário visível pede dados cadastrais e de contato, informações sobre atuação anterior na Nava ou no cliente, disponibilidade, referências profissionais e uma declaração de veracidade, e termina em um botão Enviar. Não descreve os passos do desafio técnico em rpachallenge.com. Nenhum campo foi preenchido, a declaração não foi marcada e o formulário não foi enviado."
+  },
+  "inicio": "2026-11-06T18:22:58.428-03:00",
+  "fim": "2026-11-06T18:23:02.476-03:00",
+  "navegador": "chrome",
+  "headless": true,
+  "linhas_total": 10,
+  "linhas_ok": 10,
+  "linhas_nok": 0,
+  "pontuacao": {
+    "mensagem_bruta": "Your success rate is 100% ( 70 out of 70 fields) in 2445 milliseconds",
+    "percentual": 100.0,
+    "campos_corretos": 70,
+    "campos_totais": 70,
+    "tempo_site_ms": 2445
+  },
+  "mensagem_pontuacao": "Your success rate is 100% ( 70 out of 70 fields) in 2445 milliseconds",
+  "duracao_parede_ms": 2766,
+  "ordens_distintas": [
+    "Address | Role in Company | Email | Phone Number | Last Name | Company Name | First Name",
+    "Company Name | Address | Role in Company | Email | Last Name | First Name | Phone Number",
+    "Company Name | First Name | Email | Last Name | Phone Number | Role in Company | Address",
+    "Company Name | Last Name | First Name | Address | Phone Number | Email | Role in Company",
+    "Last Name | Address | First Name | Phone Number | Role in Company | Company Name | Email",
+    "Last Name | Email | First Name | Company Name | Address | Role in Company | Phone Number",
+    "Last Name | Role in Company | Email | First Name | Company Name | Address | Phone Number",
+    "Phone Number | Company Name | Email | Last Name | First Name | Address | Role in Company",
+    "Role in Company | Last Name | Email | Address | First Name | Phone Number | Company Name",
+    "Role in Company | Last Name | Phone Number | Address | Email | Company Name | First Name"
+  ],
+  "quantidade_ordens_distintas": 10,
+  "screenshots": {
+    "rodadas": [
+      "screenshots/rodada-01-preenchida.png",
+      "screenshots/rodada-02-preenchida.png",
+      "screenshots/rodada-03-preenchida.png",
+      "screenshots/rodada-04-preenchida.png",
+      "screenshots/rodada-05-preenchida.png",
+      "screenshots/rodada-06-preenchida.png",
+      "screenshots/rodada-07-preenchida.png",
+      "screenshots/rodada-08-preenchida.png",
+      "screenshots/rodada-09-preenchida.png",
+      "screenshots/rodada-10-preenchida.png"
+    ],
+    "inicial": "screenshots/00-pagina-inicial.png",
+    "apos_start": "screenshots/01-desafio-iniciado.png",
+    "final": "screenshots/pontuacao-final.png",
+    "final_recorte": "screenshots/pontuacao-final-recorte.png"
+  },
+  "bloqueios": [],
+  "testes": {
+    "executado": true,
+    "passou": true,
+    "comando": "PYTHONPATH=src .venv/bin/python -m pytest",
+    "saida": "...............                                                          [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/reportlab/lib/rl_safe_eval.py:12\n  /workspace/.venv/lib/python3.12/site-packages/reportlab/lib/rl_safe_eval.py:12: DeprecationWarning: ast.NameConstant is deprecated and will be removed in Python 3.14; use ast.Constant instead\n    haveNameConstant = hasattr(ast,'NameConstant')\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n15 passed, 1 warning in 5.24s",
+    "arquivo": "/workspace/output/pytest.txt"
+  },
+  "eventos_ordem": 10,
+  "arquivos_gerados": true,
+  "comando": "PYTHONPATH=src .venv/bin/python -m rpa_challenge --config config.yaml",
+  "gerado_em": "2026-11-06T18:23:08.697-03:00",
+  "artefatos": {
+    "ZIP": "/opt/cursor/artifacts/entregavel-desafio-rpa-nava.zip",
+    "PDF": "/opt/cursor/artifacts/relatorio-desafio-rpa.pdf",
+    "Captura da pontuação": "/opt/cursor/artifacts/pontuacao-final.png",
+    "Recorte da pontuação": "/opt/cursor/artifacts/pontuacao-final-recorte.png",
+    "Resultados JSON": "/opt/cursor/artifacts/resultados.json",
+    "Resumo JSON": "/opt/cursor/artifacts/resumo.json",
+    "Log de etapas": "/opt/cursor/artifacts/passos.jsonl"
+  }
+}

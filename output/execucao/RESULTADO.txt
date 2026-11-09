@@ -1,0 +1,16 @@
+Resultado medido em 2026-11-06T18:23:02.476-03:00 (America/Sao_Paulo)
+
+Site: Your success rate is 100% ( 70 out of 70 fields) in 2445 milliseconds
+Pontuação: 100.0%
+Campos corretos: 70 de 70
+Tempo publicado pelo site: 2445 ms
+Duração de parede: 2766 ms
+Linhas OK: 10
+Linhas NOK: 0
+Ordens visuais distintas: 10
+Testes locais: 15 passed
+Excel SHA-256: cf1a8c04a298cc12cb481a0a6c88b078b209dc59c4983f6ca78714d611c04d37
+Forms preenchido: não
+Forms enviado: não
+
+A nota acima foi lida da página https://rpachallenge.com/ depois de preencher o formulário com a planilha. Não foi enviada a recrutador nem ao Microsoft Forms.
